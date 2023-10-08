@@ -1,6 +1,6 @@
 package cz.vojtechkubat.ChuckNorrisJokeGenerator.controllers;
 
-import cz.vojtechkubat.ChuckNorrisJokeGenerator.services.CNJokeService;
+import cz.vojtechkubat.ChuckNorrisJokeGenerator.services.JokeService;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class JokeController {
 
-    private CNJokeService cnJokeService;
+    private JokeService jokeService;
 
-    public JokeController(CNJokeService cnJokeService) {
-        this.cnJokeService = cnJokeService;
+    public JokeController(JokeService jokeService) {
+        this.jokeService = jokeService;
     }
 
     @RequestMapping("/")
     String home() {
-        return this.cnJokeService.getRandomJoke();
+        return this.jokeService.getRandomJoke();
     }
 
 }

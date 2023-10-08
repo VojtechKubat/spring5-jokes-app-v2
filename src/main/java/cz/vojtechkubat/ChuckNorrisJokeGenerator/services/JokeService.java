@@ -1,5 +1,5 @@
 package cz.vojtechkubat.ChuckNorrisJokeGenerator.services;
 
-public interface CNJokeService {
+public interface JokeService {
     String getRandomJoke();
 }
